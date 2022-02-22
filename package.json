@@ -2,7 +2,7 @@
   "name": "18-nosql",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "Module 18: NoSQL",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,6 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joce1ynn/pizza-hunt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joce1ynn/pizza-hunt/issues"
+  },
+  "homepage": "https://github.com/joce1ynn/pizza-hunt#readme"
 }
