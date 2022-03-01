@@ -23,9 +23,10 @@ const commentController = {
   },
 
   // remove comment
-  // 我们不仅需要删除评论，还需要将其从与其关联的披萨中删除。
+  // 我们不仅需要删除评论，还需要将其从与其关联的披萨中删除。f
   removeComment({ params }, res) {
-    Comment.findOneAndDelete({ _id: params.commentId }) //First we'll delete the comment,
+    //First we'll delete the comment,
+    Comment.findOneAndDelete({ _id: params.commentId })
       .then((deletedComment) => {
         if (!deletedComment) {
           return res.status(404).json({ message: "No comment with this id!" });
