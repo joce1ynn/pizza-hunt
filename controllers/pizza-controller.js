@@ -4,6 +4,13 @@ const pizzaController = {
   // get all pizzas
   getAllPizza(req, res) {
     Pizza.find({}) // 很像 Sequelize.findAll()方法。
+      //joined two tables in MongoDB we'll populate a field.
+      .populate({
+        path: "comments",
+        select: "-__v", // we don't care about the __v field on comments. The minus sign - indicates that we don't want it to be returned. If we didn't have it, it would mean that it would return only the __v field.
+      })
+      .select("-__v")
+      .sort({ _id: -1 }) //sort in DESC order by the _id value. This gets the newest pizza
       .then((dbPizzaData) => res.json(dbPizzaData))
       .catch((err) => {
         console.log(err);
@@ -15,6 +22,11 @@ const pizzaController = {
   getPizzaById({ params }, res) {
     //我们没有访问整个req，而是对其进行了解构params
     Pizza.findOne({ _id: params.id })
+      .populate({
+        path: "comments",
+        select: "-__v",
+      })
+      .select("-__v")
       .then((dbPizzaData) => {
         // If no pizza is found, send 404
         if (!dbPizzaData) {
