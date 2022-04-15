@@ -38,7 +38,17 @@ const PizzaSchema = new Schema(
 // add virtual properties to a document that aren't stored in the database.
 // They're computed values that get evaluated when you try to access their properties.
 PizzaSchema.virtual("commentCount").get(function () {
-  return this.comments.length;
+  //commentCount  includes all replies as well.
+  return this.comments.reduce(
+    (total, comment) => total + comment.replies.length + 1,
+    0
+  );
+  //我们使用该.reduce()方法来统计每条评论及其回复的总数
+  //.reduce() takes two parameters, an accumulator and a currentValue
+  // total is the last # of comment
+  // comment.replies.length is the # of replies
+  // + 1 is the current comment
+  // 0 means start count from 0
 });
 
 // create the Pizza model using the PizzaSchema
