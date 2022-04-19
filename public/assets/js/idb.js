@@ -1,3 +1,4 @@
+// -----------------------1. Create the IndexedDB Connection-----------------------
 // create variable to hold db connection
 let db;
 
@@ -32,3 +33,19 @@ request.onerror = function (event) {
   // log error here
   console.log(event.target.errorCode);
 };
+
+// -----------------------2. Save Pizza Data to IndexedDB-----------------------
+// methods for performing CRUD operations with IndexedDB aren't available at all times
+// we have to explicitly open a transaction, or a temporary connection to the database.
+
+// This function will be executed if we attempt to submit a new pizza and there's no internet connection
+function saveRecord(record) {
+  // open a new transaction with the database with read and write permissions
+  const transaction = db.transaction(["new_pizza"], "readwrite");
+
+  // access the object store for `new_pizza`
+  const pizzaObjectStore = transaction.objectStore("new_pizza");
+
+  // add record to your store with add method
+  pizzaObjectStore.add(record);
+}
