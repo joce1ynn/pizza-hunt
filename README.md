@@ -42,7 +42,7 @@ After installing npm packages, the application will be invoked by using the foll
 npm start
 ```
 
-#### Heroku Deployment
+### Heroku Deployment
 
 [Click me to see app!](https://book-search-engine-2022.herokuapp.com/)
 
@@ -70,7 +70,7 @@ npm start
   heroku open
   ```
 
-#### App Screenshot
+### App Screenshot
 
 ![Screenshot](./assets/images/ET-1.png)
 ![Screenshot](./assets/images/ET-2.png)
