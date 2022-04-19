@@ -8,12 +8,11 @@
 - [Usage](#usage)
 - [License](#license)
 - [Contribution](#contribution)
-- [Test Instructions](#test-instructions)
 - [Questions](#questions)
 
 ## Description:
 
-This is a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package.
+Pizza Hunt is a social media recipe app where users can post their creative spins on pizza, add comments to recipes, and create threads within comments. It's also a Progressive Web Application, which can save data locally when there’s no internet connection by using IndexedDB, a NoSQL client-side storage API in the browser.
 
 ## Technology:
 
@@ -21,25 +20,18 @@ Project is created with:
 
 - Javascript
 - Node.js
-- Inquirer.js
+- Express.js
+- MongoDB
+- Mongoose.js
+- HTML
+- CSS
 
 ## Installation
 
 To run this project, install it locally using npm:
 
-- In server directory:
-
 ```
-npm i
-npm run seed
-npm i apollo-server-express graphql
-npm run watch
-```
-
-- At the root of the application
-
-```
-npm init -y
+npm install
 ```
 
 ## Usage
@@ -50,11 +42,35 @@ After installing npm packages, the application will be invoked by using the foll
 npm start
 ```
 
-#### Walkthrough Video
+### Heroku Deployment
 
-[Click me to see the demo video!](https://www.awesomescreenshot.com/video/7015399?key=3428a892b1ac4c806df108fb1bf83f03)
+[Click me to see app!](https://book-search-engine-2022.herokuapp.com/)
 
-#### Example Screenshot
+- Create heroku app
+
+  ```
+  heroku create
+  ```
+
+- Create database on MongoDB Atlas:
+
+  ```
+  Cluster ➡️ Collections ➡️ Create Database
+  ```
+
+- Change Heroku setting
+
+  ```
+  Config Vars ➡️ KEY: MONGODB_URI ➡️ VALUE: (from Cluster connect, change password and database name)
+  ```
+
+- Git push
+  ```
+  git push heroku main
+  heroku open
+  ```
+
+### App Screenshot
 
 ![Screenshot](./assets/images/ET-1.png)
 ![Screenshot](./assets/images/ET-2.png)
@@ -68,11 +84,6 @@ This project is licensed under MIT, for more information please visit [this webs
 ## Contribution
 
 Made by Wenwen Tian
-
-## Test Instructions
-
-To run tests for this application, you can run the following command:
-`npm run test`
 
 ## Questions?
 
