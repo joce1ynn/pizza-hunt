@@ -73,9 +73,9 @@ npm start
 
 ### App Screenshot
 
-![Screenshot](./assets/images/ET-1.png)
-![Screenshot](./assets/images/ET-2.png)
-![Screenshot](./assets/images/ET-3.png)
+![Screenshot](./public/assets/images/ph1.png)
+![Screenshot](./public/assets/images/ph2.png)
+![Screenshot](./public/assets/images/ph3.png)
 
 ## License
 
