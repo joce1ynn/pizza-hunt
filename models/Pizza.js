@@ -4,8 +4,16 @@ const dateFormat = require("../utils/dateFormat");
 
 const PizzaSchema = new Schema(
   {
-    pizzaName: { type: String },
-    createdBy: { type: String },
+    pizzaName: {
+      type: String,
+      required: true, //Data Validation
+      trim: true, //removes white space before and after the input string
+    },
+    createdBy: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     createdAt: {
       type: Date,
       default: Date.now, //If no value is provided in this field when the user creates new data, the Date.now function will be executed and will provide a timestamp. This way we don't have to create the timestamp elsewhere and send that data.
@@ -13,6 +21,10 @@ const PizzaSchema = new Schema(
     },
     size: {
       type: String,
+      required: true,
+      enum: ["Personal", "Small", "Medium", "Large", "Extra Large"],
+      //enum选项代表enumerable，是一组可以迭代的数据——就像使用for...in循环来迭代一个对象一样。
+      //如果用户尝试输入未列出的披萨尺寸，验证将根本不允许。
       default: "large",
     },
     toppings: [], // []表示数组作为数据类型。您还可以指定Array代替括号

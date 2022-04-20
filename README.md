@@ -23,6 +23,7 @@ Project is created with:
 - Express.js
 - MongoDB
 - Mongoose.js
+- IndexedDB
 - HTML
 - CSS
 

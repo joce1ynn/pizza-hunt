@@ -28,7 +28,7 @@ const commentController = {
       { _id: params.commentId },
       // push has duplicates, but $addToSet avoids duplicates
       { $push: { replies: body } },
-      { new: true }
+      { new: true, runValidators: true }
     )
       .then((dbPizzaData) => {
         if (!dbPizzaData) {
