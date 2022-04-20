@@ -45,7 +45,7 @@ npm start
 
 ### Heroku Deployment
 
-[Click me to see app!](https://book-search-engine-2022.herokuapp.com/)
+[Click me to see app!](https://pizza-hunt-20223.herokuapp.com/)
 
 - Create heroku app
 
