@@ -10,10 +10,9 @@ app.use(express.static("public"));
 
 app.use(require("./routes"));
 
-// ongoose.connect()告诉 Mongoose 我们要连接到哪个数据库。
-// 如果环境变量MONGODB_URI存在，比如我们稍后部署的 Heroku 上，它将使用它。
-// 否则，它将与本地 MongoDB 服务器的数据库短路mongodb://localhost:27017/pizza-hunt。
+// mongoose.connect()告诉Mongoose 我们要连接到哪个数据库。
 mongoose.connect(
+  // use heroku MONGODB_URI or local mongodb 
   process.env.MONGODB_URI || "mongodb://localhost:27017/pizza-hunt",
   {
     useNewUrlParser: true,

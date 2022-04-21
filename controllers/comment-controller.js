@@ -2,6 +2,7 @@ const { Comment, Pizza } = require("../models");
 
 const commentController = {
   // add comment to pizza
+  // params is the url, body is the json body
   addComment({ params, body }, res) {
     console.log(body);
     Comment.create(body)

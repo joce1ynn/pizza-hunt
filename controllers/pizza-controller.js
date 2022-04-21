@@ -55,7 +55,7 @@ const pizzaController = {
   // 这意味着用户可以创建一个比萨饼，然后用完全不同的数据更新该比萨饼，而无需对其进行验证。
   updatePizza({ params, body }, res) {
     Pizza.findOneAndUpdate({ _id: params.id }, body, {
-      new: true,
+      new: true, //返回文档的新版本。
       runValidators: true, //NEED TO VALIDATE DATA IN UPDATE
     })
       // 如果我们不设置{ new: true }它将返回原始文档。通过将参数设置为true，Mongoose 返回文档的新版本。
